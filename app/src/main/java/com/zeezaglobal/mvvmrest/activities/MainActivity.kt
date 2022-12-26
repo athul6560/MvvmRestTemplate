@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.zeezaglobal.mvvmrest.R
-import com.zeezaglobal.mvvmrest.apis.retrofitHelper
-import com.zeezaglobal.mvvmrest.apis.retrofitInterface
+import com.zeezaglobal.mvvmrest.apis.RetrofitHelper
+import com.zeezaglobal.mvvmrest.apis.RetrofitInterface
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val quotesApi = retrofitHelper.getInstance().create(retrofitInterface::class.java)
+        val quotesApi = RetrofitHelper.getInstance().create(RetrofitInterface::class.java)
         // launching a new coroutine
         GlobalScope.launch {
             val result = quotesApi.getQuotes()

@@ -1,13 +1,14 @@
 package com.zeezaglobal.mvvmrest.apis
 
+import com.zeezaglobal.mvvmrest.utils.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object retrofitHelper {
-    val baseUrl = "https://www.cbc.ca/aggregate_api/v1/"
+object RetrofitHelper {
+
 
     fun getInstance(): Retrofit {
-        return Retrofit.Builder().baseUrl(baseUrl)
+        return Retrofit.Builder().baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
