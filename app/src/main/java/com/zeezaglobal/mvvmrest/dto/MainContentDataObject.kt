@@ -1,11 +1,11 @@
-package com.zeezaglobal.mvvmrest.data.enitities
+package com.zeezaglobal.mvvmrest.dto
 
-
-
-
-
-data class MainContent(
-val id: Int,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.zeezaglobal.mvvmrest.data.enitities.Images
+@Entity
+data class MainContentDataObject (
+    @PrimaryKey val id: Int,
     val title: String,
     val description: String,
     val source: String,
@@ -19,7 +19,6 @@ val id: Int,
     val active: Boolean,
     val draft: Boolean,
     val embedTypes: String,
-    val images: Images,
+    val images: String,
     val language: String
-)
-
+        )
